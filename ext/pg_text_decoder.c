@@ -494,7 +494,7 @@ static VALUE pg_text_dec_timestamp_with_time_zone_do(VALUE rstr)
     tm.tm_sec = sec;
     tm.tm_isdst = 0;
 
-    time = mktime(&tm);
+    time = timegm(&tm);
     if (time != -1)
     {
       struct timespec ts;
